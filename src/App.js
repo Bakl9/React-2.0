@@ -13,17 +13,13 @@ function App() {
         {id:3, title:'Javascript', body:'Description'}
     ])
 
-    const [title, setTitle] = useState('')
-    const [body, setBody] = useState('')
+    const [posts, setPosts] = useState({body: ' ',title: '' })
+
 
     const addNewPost = (e) => {
         e.preventDefault()
-        const newPost = {
-            id: Date.now(),
-            title,
-            body,
-        }
-        setPost([...post, newPost])
+        setPost([...post,{...posts, id:Date.now()}])
+        setPosts({body: ' ',title: '' })
     }
 
   return (
@@ -31,14 +27,14 @@ function App() {
           <form>
               <Input type="text"
                      placeholder={'введите текс'}
-                     value={title}
-                     onChange={e => setTitle (e.target.value)}
+                     value={posts.title}
+                     onChange={e => setPosts ({...posts,title: e.target.value})}
               />
               <Input
                   type="text"
                   placeholder={'введите текс'}
-                  value={body}
-                  onChange={e => setBody (e.target.value)}
+                  value={posts.body}
+                  onChange={e => setPosts ({...posts, body: e.target.value})}
               />
               <MyButton onClick={addNewPost}>Добавить</MyButton>
           </form>
