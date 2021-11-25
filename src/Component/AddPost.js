@@ -1,7 +1,8 @@
 import React from 'react';
 import s from "../App.module.css";
+import MyButton from "./BLL/MyButton/MyButton";
 
-const AddPost = ({post,number}) => {
+const AddPost = ({post,number,remove}) => {
     return (
         <div>
             <div className={s.container}>
@@ -11,7 +12,7 @@ const AddPost = ({post,number}) => {
                         {post.body}
                     </div>
                 </div>
-                <button>удалить</button>
+                <MyButton onClick={() => remove(post)} >удалить</MyButton>
             </div>
         </div>
     );
