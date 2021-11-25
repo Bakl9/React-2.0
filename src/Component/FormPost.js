@@ -2,15 +2,16 @@ import React, {useState} from 'react';
 import Input from "./BLL/MyInput/Input";
 import MyButton from "./BLL/MyButton/MyButton";
 
-const FormPost = () => {
+const FormPost = ({create}) => {
 
     const [posts, setPosts] = useState({body: ' ',title: '' })
 
     const addNewPost = (e) => {
         e.preventDefault()
         const newPost = {
-            ...posts, id:Date.now()
+            ...posts,id:Date.now()
         }
+        create(newPost)
         setPosts({body: ' ',title: '' })
     }
 
