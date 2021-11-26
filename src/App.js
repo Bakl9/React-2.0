@@ -8,7 +8,7 @@ import FormPost from "./Component/FormPost";
 
 function App() {
 
-    const [post, setPost] = useState( [
+    const [post, setPost] = useState( [   
         {id:1, title:'Javascript', body:'Description'},
         {id:2, title:'Javascript', body:'Description'},
         {id:3, title:'Javascript', body:'Description'}
