@@ -17,7 +17,7 @@ function App() {
     const createPost = (newPost) => {
       setPost([...post,newPost])
     }
-
+  
     const removePost = (posts) => {
         setPost(post.filter( p => p.id !== posts.id))
     }
